@@ -1,27 +1,32 @@
-# PHG Team Hub - GitHub Pages setup
+# Pinnacle Pulse website
 
-## Fastest publishing method
+This is a simple GitHub Pages site containing only:
 
-1. In GitHub, create a new repository named `phg-team-hub`.
-2. Select **Public** and click **Create repository**.
-3. Click **uploading an existing file**.
-4. Upload `index.html`, `styles.css`, and `script.js`.
-5. Click **Commit changes**.
-6. Open **Settings > Pages**.
-7. Under **Build and deployment**, select **Deploy from a branch**.
-8. Select branch **main** and folder **/ (root)**, then click **Save**.
+- the newest Pinnacle Pulse newsletter;
+- an archive of earlier newsletters.
 
-Your site will appear at:
+## Upload to GitHub
 
-`https://YOUR-GITHUB-USERNAME.github.io/phg-team-hub/`
+1. Create a public repository called `pinnacle-pulse`.
+2. Upload every file and folder from this package.
+3. Go to **Settings > Pages**.
+4. Choose **Deploy from a branch**.
+5. Select **main** and **/ (root)**, then save.
 
-## Monthly update
+## Add the PDFs
 
-Open `script.js`, click the pencil icon, and update the `latest` section at the top.
-Move the previous newsletter into the `archive` list, then commit the change.
+Open the `newsletters` folder and upload the PDF files using the filenames referenced in `script.js`.
 
-## PDFs
+The current latest file should be named:
 
-You can upload PDFs into a `newsletters` folder in the same repository and use links such as:
+`latest.pdf`
 
-`newsletters/pinnacle-pulse-august-2026.pdf`
+## Update each month
+
+1. Rename the old `latest.pdf` to its month, for example `august-2026.pdf`.
+2. Upload the new newsletter as `latest.pdf`.
+3. Open `script.js` and change the latest month/title.
+4. Add the old edition to the top of the `previous` list.
+5. Commit the changes.
+
+The logo used is the official white Pinnacle Hospitality Group logo from the corporate website.

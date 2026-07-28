@@ -1,38 +1,31 @@
-// EDIT ONLY THIS SECTION EACH MONTH
-const siteData = {
+// Update only this information each month.
+const newsletterData = {
   latest: {
     month: "August 2026",
-    title: "August 2026 Edition",
-    description: "Celebrate this month’s Pinnacle MVP, team milestones, new starters, guest highlights and updates from across PHG.",
-    pdfUrl: "#" // Paste the public PDF link between the quotation marks
+    title: "August 2026 Newsletter",
+    description: "Read the latest news, team recognition and updates from across Pinnacle Hospitality Group.",
+    link: "newsletters/latest.pdf"
   },
-  archive: [
-    { month: "July 2026", title: "July Edition", pdfUrl: "#" },
-    { month: "June 2026", title: "June Edition", pdfUrl: "#" },
-    { month: "May 2026", title: "May Edition", pdfUrl: "#" }
+  previous: [
+    { month: "July 2026", title: "July 2026 Newsletter", link: "newsletters/july-2026.pdf" },
+    { month: "June 2026", title: "June 2026 Newsletter", link: "newsletters/june-2026.pdf" },
+    { month: "May 2026", title: "May 2026 Newsletter", link: "newsletters/may-2026.pdf" }
   ]
 };
-// END OF MONTHLY EDITING SECTION
 
-document.getElementById("coverMonth").textContent = siteData.latest.month.toUpperCase();
-document.getElementById("latestTitle").textContent = siteData.latest.title;
-document.getElementById("latestDescription").textContent = siteData.latest.description;
-document.getElementById("latestPdfButton").href = siteData.latest.pdfUrl;
+document.getElementById("latest-heading").textContent = newsletterData.latest.month;
+document.getElementById("cover-month").textContent = newsletterData.latest.month.toUpperCase();
+document.getElementById("latest-title").textContent = newsletterData.latest.title;
+document.getElementById("latest-description").textContent = newsletterData.latest.description;
+document.getElementById("latest-link").href = newsletterData.latest.link;
 
-const archiveGrid = document.getElementById("archiveGrid");
-siteData.archive.forEach((edition) => {
-  const card = document.createElement("a");
-  card.className = "archive-card";
-  card.href = edition.pdfUrl;
-  card.target = "_blank";
-  card.rel = "noopener";
-  card.innerHTML = `<span class="month">${edition.month.toUpperCase()}</span><h3>${edition.title}</h3><p>Read this edition of Pinnacle Pulse.</p><b>Open newsletter →</b>`;
-  archiveGrid.appendChild(card);
-});
-
-document.querySelectorAll(".placeholder-link").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    alert("Add this link when the resource is ready.");
-  });
+const list = document.getElementById("archive-list");
+newsletterData.previous.forEach(item => {
+  const link = document.createElement("a");
+  link.className = "archive-item";
+  link.href = item.link;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.innerHTML = `<span class="month">${item.month.toUpperCase()}</span><h3>${item.title}</h3><span class="arrow">→</span>`;
+  list.appendChild(link);
 });
